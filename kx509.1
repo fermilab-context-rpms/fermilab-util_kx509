@@ -1,0 +1,43 @@
+.TH kx509 1
+.SH NAME
+kx509 \- get an X.509 certificate for Fermilab using kerberos
+
+.SH SYNOPSIS
+.B kx509
+.RI [ -? | -h ]
+.RI [ cigetcert_options ]
+
+.SH DESCRIPTION
+.B kx509
+gets an X.509 certificate certificate using 
+.I cigetcert(1)
+with the options
+.nf
+  -i 'Fermi National Accelerator Laboratory' -n
+.fi
+which set the default institution, enables kerberos authentication, and
+disallows prompting for a passphrase.  
+.B kx509
+is provided for backward compatibility with another tool of the same
+name that used to retrieve certificates from a Fermilab Kerberos
+Certificate Authority (KCA).
+.SH OPTIONS
+.PP
+.TP
+.BR \-? , \ \-h
+Show a help message and exit.
+.PP
+All other options are passed to 
+.IR cigetcert .
+
+.SH ENVIRONMENT
+.PP
+.TP
+.B X509_USER_PROXY
+Set the location for the output file
+
+.SH AUTHOR
+Dave Dykstra
+
+.SH "SEE ALSO"
+cigetcert(1)
